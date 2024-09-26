@@ -80,12 +80,29 @@
         <img src="me.png" alt="Your Logo" width="200">
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-        <form onsubmit="checkPassword(); return false;" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <input type="password" id="password" class="textbox" placeholder="Password?" style="vertical-align: middle;">
-            
-        </form>
+        <button onclick="checkPassword();" class="styled-button">Submit</button>
     </div>
-</div>
+    <style>
+        .styled-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #f952ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .styled-button:hover {
+            background-color: #45a049;
+        }
+    
+        .styled-button:active {
+            background-color: #3e8e41;
+        }
+    </style>
 
 <footer>
     <p>&copy; 2024 Kitsune Technologies LLC. All rights reserved.</p>
