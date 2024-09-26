@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsune Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Load particles.js library from a reliable CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> 
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+        }
+        h1 {
+            color: rgb(249, 82, 255);
+            font-weight: 600;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .textbox {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+        }
+        footer a {
+            color: #f952ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Particle background container -->
+<div id="particles-js"></div>
+
+<div class="container">
+    <h1>Kitsune Technologies</h1>
+    <div class="logo">
+        <img src="me.png" alt="Your Logo" width="200">
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <form onsubmit="checkPassword(); return false;" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <input type="password" id="password" class="textbox" placeholder="Password?" style="vertical-align: middle;">
+            
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Kitsune Technologies LLC. All rights reserved.</p>
+    <p>
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="terms-of-service.html">Terms of Service</a> |
+        <a href="cookie-policy.html">Cookie Policy</a> |
+        <a href="contact.html">Contact Us</a>
+    </p>
+    <p>Email us: <a href="mailto:support@kitsunetech.com">Support@kitsunetech.com</a></p>
+</footer>
+
+<!-- Particles.js Initialization Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 50,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "shape": {
+                    "type": "polygon",
+                    "stroke": {
+                        "width": 1,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "color": {
+                    "value": "#f952ff"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 5,
+                    "random": true
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": true
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    });
+
+    // Password check function
+    function checkPassword() {
+        const password = document.getElementById('password').value;
+        const correctPassword = 'Kitsune'; // Replace with your actual password
+        if (password === correctPassword) {
+            window.location.href = "/main.html"; // Redirect to the desired page
+        } else {
+            alert('Incorrect password, try again.');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildMyPC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+        h1 {
+            color: rgb(82, 182, 255);
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+            margin-top: 20px;
+        }
+        .button {
+            background-color: rgb(82, 182, 255);
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #5ac0e6;
+        }
+        footer {
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+            position: absolute;
+            bottom: 0;
+        }
+        footer a {
+            color: #52b6ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgb(82, 182, 255);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5ac0e6;
+}
+
+.logo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 150px; /* Adjust this size to fit your logo */
+}
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <a href="/" style="position: absolute; top: 20px; left: 20px; color: #f952ff; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 600;">
+        &larr; Back
+    </a>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="logo">
+            <img src="pclogo.png" alt="BuildMyPC Logo" width="150">
+        </div>
+        <h1>Build Your Ultimate PC</h1>
+        <p>Explore our guides and select the best components for your custom PC build.</p>
+        <div class="button-container">
+            <a href="/builder.html" class="button">Start Building</a>
+            <a href="/haveparts.html" class="button">Already Have Parts?</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BuildMyPC. All rights reserved.</p>
+        <p>
+            <a href="/pc-parts.html">PC Parts</a> |
+            <a href="/haveparts.html">Have Parts?</a> |
+            <a href="/support.html">Support</a> |
+            <a href="/contact.html">Contact Us</a>
+        </p>
+        <p>Email us: <a href="mailto:support@buildmypc.com">support@BuildMyPC.com</a></p>
+    </footer>
+
+    <!-- Particles.js Script -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 50,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 1,
+                        "color": "#000000"
+                    }
+                },
+                "color": {
+                    "value": "#52b6ff"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 5,
+                    "random": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": true
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

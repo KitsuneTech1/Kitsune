@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsune Technologies - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        header {
+            background-color: rgba(26, 26, 26, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px; /* Adjust this value to make the logo bigger */
+            height: auto;
+        }
+        header h1 {
+            margin: 0;
+            color: rgb(249, 82, 255);
+            font-size: 28px;
+            font-weight: 600;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #f952ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            flex-grow: 1;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .project {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h2 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            color: #f952ff;
+        }
+        .project p {
+            margin: 0 0 10px;
+            color: #cccccc;
+        }
+        .project a {
+            color: #f952ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .project a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: rgba(26, 26, 26, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        footer a {
+            color: #f952ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+    <img src="me.png" alt="Kitsune Logo" class="logo"> <!-- Replace 'your-logo.png' with the path to your logo -->
+    <h1>Kitsune Technologies Projects</h1>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="project">
+        <h2>Project BuildMyPC</h2>
+        <p>An innovative cybersecurity tool that redefines digital security. Built with advanced encryption and AI-driven threat detection.</p>
+        <a href="/buildmypc.html">View Project</a>
+    </section>
+
+    <section class="project">
+        <h2>Project OSRS Accessability Scripts</h2>
+        <p>A cloud-based platform designed for secure data storage and management, providing cutting-edge privacy features.</p>
+        <a href="/projects/project-beta.html">View Project</a>
+    </section>
+
+    <section class="project">
+        <h2>Project </h2>
+        <p>An intuitive web application that helps users manage their digital identities and enhance their online presence securely.</p>
+        <a href="/projects/project-gamma.html">View Project</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Kitsune Technologies LLC. All rights reserved.</p>
+    <p>
+        <a href="/privacy-policy.html">Privacy Policy</a> |
+        <a href="/terms-of-service.html">Terms of Service</a> |
+        <a href="/cookie-policy.html">Cookie Policy</a> |
+        <a href="/contact.html">Contact Us</a>
+    </p>
+    <p>Email us: <a href="mailto:support@kitsunetech.com">Support@kitsunetech.com</a></p>
+</footer>
+
+<script>
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 50,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "shape": {
+                "type": "polygon",
+                "stroke": {
+                    "width": 1,
+                    "color": "#ffffff"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "color": {
+                "value": "#f952ff"
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false
+            },
+            "size": {
+                "value": 5,
+                "random": true
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": true
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

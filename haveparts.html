@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildMyPC - Enter Your Components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        h1 {
+            color: rgb(82, 182, 255);
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        label {
+            font-weight: 600;
+            margin: 15px 0 5px 0;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+
+        .input-group input[type="text"] {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .button, .add-input, .remove-input {
+            background-color: rgb(82, 182, 255);
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover, .add-input:hover, .remove-input:hover {
+            background-color: #5ac0e6;
+        }
+
+        .remove-input {
+            background-color: #ff5252;
+            margin-left: 10px;
+        }
+
+        .remove-input:hover {
+            background-color: #e64848;
+        }
+
+        footer {
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #52b6ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" style="position: absolute; top: 20px; left: 20px; color: rgb(82, 182, 255); text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 600;">
+        &larr; Back
+    </a>
+    <div class="logo">
+        <img src="1024X.png" alt="BuildMyPC Logo">
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Enter Your PC Components</h1>
+        <form id="components-form" action="process-form.php" method="POST">
+            
+            <!-- Predefined Dropdowns -->
+            <div class="input-group">
+                <label for="cpu">CPU:</label>
+                <select id="cpu" name="components[]">
+                    <option value="Intel Core i9-12900K">Intel Core i9-12900K</option>
+                    <option value="Intel Core i7-12700K">Intel Core i7-12700K</option>
+                    <option value="AMD Ryzen 9 5900X">AMD Ryzen 9 5900X</option>
+                    <option value="AMD Ryzen 7 5800X">AMD Ryzen 7 5800X</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="gpu">GPU:</label>
+                <select id="gpu" name="components[]">
+                    <option value="NVIDIA GeForce RTX 3080">NVIDIA GeForce RTX 3080</option>
+                    <option value="NVIDIA GeForce RTX 3090">NVIDIA GeForce RTX 3090</option>
+                    <option value="AMD Radeon RX 6800 XT">AMD Radeon RX 6800 XT</option>
+                    <option value="AMD Radeon RX 6700 XT">AMD Radeon RX 6700 XT</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="motherboard">Motherboard:</label>
+                <select id="motherboard" name="components[]">
+                    <option value="ASUS ROG Strix Z690-E">ASUS ROG Strix Z690-E</option>
+                    <option value="MSI MAG B550 TOMAHAWK">MSI MAG B550 TOMAHAWK</option>
+                    <option value="Gigabyte AORUS X570 Elite">Gigabyte AORUS X570 Elite</option>
+                    <option value="ASRock B550M Steel Legend">ASRock B550M Steel Legend</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="ram">RAM:</label>
+                <select id="ram" name="components[]">
+                    <option value="Corsair Vengeance RGB Pro 32GB">Corsair Vengeance RGB Pro 32GB</option>
+                    <option value="G.Skill Trident Z RGB 16GB">G.Skill Trident Z RGB 16GB</option>
+                    <option value="Crucial Ballistix 16GB">Crucial Ballistix 16GB</option>
+                    <option value="Kingston HyperX Fury 16GB">Kingston HyperX Fury 16GB</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="storage">Storage:</label>
+                <select id="storage" name="components[]">
+                    <option value="Samsung 970 EVO Plus 1TB">Samsung 970 EVO Plus 1TB</option>
+                    <option value="Western Digital Black SN750 1TB">Western Digital Black SN750 1TB</option>
+                    <option value="Seagate Barracuda 2TB">Seagate Barracuda 2TB</option>
+                    <option value="Crucial MX500 1TB">Crucial MX500 1TB</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="case">Case:</label>
+                <select id="case" name="components[]">
+                    <option value="NZXT H510 Elite">NZXT H510 Elite</option>
+                    <option value="Corsair 4000D Airflow">Corsair 4000D Airflow</option>
+                    <option value="Lian Li PC-O11 Dynamic">Lian Li PC-O11 Dynamic</option>
+                    <option value="Fractal Design Meshify C">Fractal Design Meshify C</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="psu">Power Supply Unit (PSU):</label>
+                <select id="psu" name="components[]">
+                    <option value="EVGA SuperNOVA 850W G5">EVGA SuperNOVA 850W G5</option>
+                    <option value="Corsair RM850x">Corsair RM850x</option>
+                    <option value="Seasonic Focus GX-750">Seasonic Focus GX-750</option>
+                    <option value="Cooler Master V850">Cooler Master V850</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <div class="input-group">
+                <label for="cooling">Cooling System:</label>
+                <select id="cooling" name="components[]">
+                    <option value="NZXT Kraken X73 RGB">NZXT Kraken X73 RGB</option>
+                    <option value="Corsair H150i Elite Capellix">Corsair H150i Elite Capellix</option>
+                    <option value="Noctua NH-D15">Noctua NH-D15</option>
+                    <option value="Cooler Master Hyper 212">Cooler Master Hyper 212</option>
+                </select>
+                <button type="button" class="add-input">+</button>
+            </div>
+
+            <!-- Miscellaneous Upgrades Text Box -->
+            <div class="input-group">
+                <label for="misc">Miscellaneous Upgrades:</label>
+                <input type="text" id="misc" name="misc" placeholder="e.g., Custom Lighting, Additional Fans">
+            </div>
+
+            <!-- Additional input groups will be added here -->
+            <div class="button-container">
+                <input type="submit" class="button" value="Next Page">
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BuildMyPC. All rights reserved.</p>
+        <p>
+            <a href="/pc-parts.html">PC Parts</a> |
+            <a href="/build-guide.html">Build Guides</a> |
+            <a href="/support.html">Support</a> |
+            <a href="/contact.html">Contact Us</a>
+        </p>
+        <p>Email us: <a href="mailto:support@buildmypc.com">support@BuildMyPC.com</a></p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            function applyAutocomplete() {
+                $(".autocomplete").autocomplete({
+                    source: availableComponents
+                });
+            }
+
+            function saveFormData() {
+                $("#components-form select, #components-form input[type='text']").each(function() {
+                    var id = $(this).attr('id') || $(this).attr('name');
+                    document.cookie = id + "=" + encodeURIComponent($(this).val()) + "; path=/";
+                });
+            }
+
+            function loadFormData() {
+                $("#components-form select, #components-form input[type='text']").each(function() {
+                    var id = $(this).attr('id') || $(this).attr('name');
+                    var value = getCookie(id);
+                    if (value) {
+                        $(this).val(decodeURIComponent(value));
+                    }
+                });
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Load form data on page load
+            loadFormData();
+
+            // Save form data when form fields change
+            $("#components-form select, #components-form input[type='text']").on('change', function() {
+                saveFormData();
+            });
+
+            // Add new input fields with dynamic buttons
+            $(document).on('click', '.add-input', function() {
+                var parentDiv = $(this).closest('.input-group');
+                var newInputGroup = parentDiv.clone();
+
+                // Replace the add button in the previous group with a remove button
+                parentDiv.find('.add-input').replaceWith('<button type="button" class="remove-input">-</button>');
+
+                // Insert new input group after the current one
+                newInputGroup.insertAfter(parentDiv);
+
+                // Clear the values in the cloned group and apply autocomplete
+                newInputGroup.find('select').val('');
+                newInputGroup.find('.remove-input').after('<button type="button" class="add-input">+</button>');
+                newInputGroup.find('.remove-input').remove();
+
+                applyAutocomplete();
+            });
+
+            // Remove input fields
+            $(document).on('click', '.remove-input', function() {
+                $(this).closest('.input-group').remove();
+            });
+        });
+    </script>
+</body>
+
+
+</html>
